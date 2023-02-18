@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Geometry Genius</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row my-3">
+            <div class="col">
+                <div class="bg-info-subtle px-5 py-3 rounded">
+                    <h3>Interactive </h3>
+                    <p class="m-0">Geometry Genius</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col d-flex align-items-stretch">
+                        <div class="card align-items-center bg">
+                            <div class="card-image-area">
+                                <img src="./images/triangle.png" class="card-img-top p-3" alt="...">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Triangle</h5>
+                                <p class="card-text"><i>Area (A) = 0.5 x b x h</i></p>
+                                <p id="remv1" class="d-none"> <i id="triangleFormula"></i> <button onclick="removeTrianglel()"
+                                        class="btn btn-outline-dark btn-sm">&#10544</button></p>
+                                <div class="input-area">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="input-group mb-3">
+                                                <input type="text" id="triangle-b" class="form-control" placeholder="b">
+                                                <span class="input-group-text" id="basic-addon2">cm</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="input-group mb-3">
+                                                <input type="text" id="triangle-h" class="form-control" placeholder="h">
+                                                <span class="input-group-text" id="basic-addon2">cm</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button href="#" class="btn btn-primary" onclick="triangle_fn()">Calculate</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col d-flex align-items-stretch">
+                        <div class="card align-items-center bg">
+                            <img src="./images/rectangle.png" class="card-img-top p-3" alt="...">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Rectangle</h5>
+                                <p class="card-text"><i>Area (A) = w x l</i></p>
+                                <p id="remv2" class="d-none">
+                                    <i id="rectangleFormula"></i> <button onclick="removeRectangle()"
+                                        class="btn btn-outline-dark btn-sm">&#10544</button>
+                                </p>
+                                <div class="input-area">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="input-group mb-3">
+                                                <input type="text" id="rectangle-w" class="form-control"
+                                                    placeholder="w">
+                                                <span class="input-group-text" id="basic-addon2">cm</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="input-group mb-3">
+                                                <input type="text" id="rectangle-l" class="form-control"
+                                                    placeholder="l">
+                                                <span class="input-group-text" id="basic-addon2">cm</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn btn-primary" onclick="rectangle_fn()">Calculate</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col d-flex align-items-stretch">
+                        <div class="card align-items-center bg">
+                            <img src="./images/parallelogram.png" class="card-img-top p-3" alt="...">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Parallelogram</h5>
+                                <p class="card-text"><i>Area (A) = b x h</i></p>
+                                <p id="remv3" class="d-none">
+                                    <i id="parallelogramFormula"></i> <button onclick="removeParallelogram()"
+                                        class="btn btn-outline-dark btn-sm">&#10544</button>
+                                </p>
+                                <div class="input-area">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="input-group mb-3">
+                                                <input type="text" id="parallelogram-b" class="form-control"
+                                                    placeholder="b">
+                                                <span class="input-group-text" id="basic-addon2">cm</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="input-group mb-3">
+                                                <input type="text" id="parallelogram-h" class="form-control"
+                                                    placeholder="h">
+                                                <span class="input-group-text" id="basic-addon2">cm</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn btn-primary" onclick="parallelogram_fn()">Calculate</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Area Calculation</h5>
+                        <div class="card">
+                            <ul id="calc-print" class="list-group list-group-flush">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./calculate.js"></script>
+    <script src="./helper.js"></script>
+
+
+</body>
+
+</html>
