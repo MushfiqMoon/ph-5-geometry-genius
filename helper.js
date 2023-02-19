@@ -8,27 +8,29 @@ const valueRemover = (val) => {
 
 
 // Random Background Color 
-// const randomColor = () => {
-//     let color = [];
-//     for (let i = 0; i < 3; i++) {
-//         color.push(Math.floor(Math.random() * 256));
-//     }
-//     return 'rgb(' + color.join(', ') + ')'
-// }
+const opacity = '0.15' 
+const randomColor = () => {
+    let color = [];
+    for (let i = 0; i < 3; i++) {
+        color.push(Math.floor(Math.random() * 256));
+    }
+    console.log()
+    return 'rgb(' + color.join(', ') + ', '+ opacity + ')'
+}
 
-// const cardbox = document.getElementsByClassName('bg');
+const cardbox = document.getElementsByClassName('bg');
 
-// for (let i = 0; i < cardbox.length; i++) {
-//     cardbox[i].addEventListener('mouseenter', function () {
-//         this.style['background-color'] = randomColor()
-//         this.style['transition'] = '0.5s'
-//     })
-//     cardbox[i].addEventListener('mouseleave', function () {
-//         this.style['background-color'] = '#fff'
-//     })
+for (let i = 0; i < cardbox.length; i++) {
+    cardbox[i].addEventListener('mouseenter', function () {
+        this.style['background-color'] = randomColor()
+        this.style['transition'] = '0.5s'
+    })
+    cardbox[i].addEventListener('mouseleave', function () {
+        this.style['background-color'] = '#fff'
+    })
 
 
-// }
+}
 
 
 
